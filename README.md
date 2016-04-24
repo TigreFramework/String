@@ -92,7 +92,7 @@ using namespace Tigre;
 
 int main() {
     RsaString rs;
-    rs.setValue("Olá Mundo");
+    rs.setValue("Olá Mundo"); // Informar onde salvar e carregar as chaves RSA
     rs.setKeysPath("rsa-public.pem", "rsa-private.pem");
     rs.gerarChaves(); //gera novas chaves (privada e publica)
     rs.carregarChaves(); //carrega as chaves gerada anteriormente dos arquivos ou as já criadas em outras execuções
