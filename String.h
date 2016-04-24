@@ -11,13 +11,6 @@
 #include <iomanip>
 #include <iostream>
 #include <stdio.h>
-#include <openssl/rsa.h>
-#include <openssl/evp.h>
-#include <openssl/objects.h>
-#include <openssl/x509.h>
-#include <openssl/err.h>
-#include <openssl/pem.h>
-#include <openssl/ssl.h>
 
 #include "RsaString.h"
 
