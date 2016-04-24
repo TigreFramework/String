@@ -1,25 +1,24 @@
 #include <iostream>
 #include "String.h"
 
-//using namespace Tigre;
+using namespace Tigre;
 
 int main() {
-    Tigre::String::setRsaKey("public.pem", "private.pem", true);
 
-    Tigre::String s = "Hello, World My Friend";
-    //Tigre::String j = "Pedro Soares";
+    String rs = ("Hello World, é tetra");//, "rsa-public.pem", "rsa-private.pem");
+    rs.setKeysPath("rsa-public.pem", "rsa-private.pem");
+    rs.gerarChaves(); //gera novos arquivos
+    rs.carregarChaves();
 
+    std::cout << "Original: " << rs << "\n\n";
 
+    rs.Encryption();
 
-    std::cout << "'" << s << "'\n\n";
+    std::cout << "Criptado: " << rs << "\n\n";
 
-    s.public_encrypt();
+    rs.Decryption();
 
-    //std::cout << "'" << s << "'\n\n";
-
-    s.private_decrypt();
-
-    std::cout << "'" << s << "'\n\n";
+    std::cout << "Descriptado: " << rs << "\n\n";
 
     return 0;
 }
