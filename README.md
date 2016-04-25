@@ -13,6 +13,14 @@ Para fazer a compilação do arquivo de teste e as bibliotecas estaticas siga os
 Em breve faço os passos para compilação em Windows.
 
 ##### Linux/Mac
+Primeiro compile as dependencias do Rsa do seguinte modo:
+```
+cd include/cryptopp563/
+make
+cp libcryptopp.a ../../
+cd ../../
+```
+Depois compile o projeto do seguinte modo:
 ```
 mkdir build
 cd build/
