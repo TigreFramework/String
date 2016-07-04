@@ -1,11 +1,24 @@
 cmake_minimum_required(VERSION 3.4)
 project(String)
-include_directories(./include/cryptopp563/)
-link_directories(./include/cryptopp563/)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -lcryptopp")
-set(SOURCE_FILES main.cpp String.cpp String.h RsaString.cpp RsaString.h libcryptopp.a)
-add_executable(Teste ${SOURCE_FILES})
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(MY_LIBRARY_PATH ./deps)
 
-add_library(RsaString STATIC RsaString.cpp)
-add_library(String STATIC String.cpp)
+include_directories(${MY_LIBRARY_PATH}/include/)
+LINK_DIRECTORIES(${MY_LIBRARY_PATH}/lib/Mac/)
+
+
+
+set(TEST_FILES main.cpp String.cpp String.h RsaString.cpp RsaString.h)
+set(STRING_FILES String.cpp String.h RsaString.cpp RsaString.h)
+set(RSASTRING_FILES RsaString.cpp RsaString.h)
+
+add_executable(TesteStrings ${TEST_FILES})
+add_library(RsaString STATIC ${RSASTRING_FILES})
+add_library(String STATIC ${STRING_FILES})
+
+target_link_libraries(TesteStrings cryptopp)
+target_link_libraries(RsaString cryptopp)
+target_link_libraries(String cryptopp)
+
+

@@ -36,6 +36,11 @@ Tigre::String::~String() {
 
 }
 
+std::string Tigre::String::getValue(){
+    return this->value;
+}
+
+
 int Tigre::String::Count() {
     return (int) this->value.size();
 }

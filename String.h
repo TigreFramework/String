@@ -38,6 +38,7 @@ namespace Tigre {
             void urlDecode();
             void urlEncode();
             String aleatorio(int tamanho);
+            std::string getValue();
 
             char& operator[](std::size_t idx);
             String& operator+=(const String& rhs);

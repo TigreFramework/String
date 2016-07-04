@@ -3,6 +3,14 @@
 
 using namespace Tigre;
 
+/*    #link_directories(./include/cryptopp563/)
+
+
+    #find_library(cryptopp ./include/cryptopp563/)
+    #target_link_libraries(cryptopp ./include/cryptopp563/)
+    #link_libraries(cryptopp ./include/cryptopp563/)
+*/
+
 int main() {
 
     String rs = ("Hello World, é tetra");//, "rsa-public.pem", "rsa-private.pem");
