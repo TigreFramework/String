@@ -5,32 +5,32 @@
 #ifndef RSA_RSASTRING_H
 #define RSA_RSASTRING_H
 
-#include "cryptopp563/rsa.h"
+#include "cryptopp/rsa.h"
 using CryptoPP::RSA;
 using CryptoPP::InvertibleRSAFunction;
 using CryptoPP::RSAES_OAEP_SHA_Encryptor;
 using CryptoPP::RSAES_OAEP_SHA_Decryptor;
 
-#include "cryptopp563/sha.h"
+#include "cryptopp/sha.h"
 using CryptoPP::SHA1;
 
-#include "cryptopp563/filters.h"
+#include "cryptopp/filters.h"
 using CryptoPP::StringSink;
 using CryptoPP::StringSource;
 using CryptoPP::PK_EncryptorFilter;
 using CryptoPP::PK_DecryptorFilter;
 
-#include "cryptopp563/files.h"
+#include "cryptopp/files.h"
 using CryptoPP::FileSink;
 using CryptoPP::FileSource;
 
-#include "cryptopp563/osrng.h"
+#include "cryptopp/osrng.h"
 using CryptoPP::AutoSeededRandomPool;
 
-#include "cryptopp563/secblock.h"
+#include "cryptopp/secblock.h"
 using CryptoPP::SecByteBlock;
 
-#include "cryptopp563/cryptlib.h"
+#include "cryptopp/cryptlib.h"
 using CryptoPP::Exception;
 using CryptoPP::DecodingResult;
 
@@ -45,7 +45,7 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-#include <cryptopp563/queue.h>
+#include "cryptopp/queue.h"
 using CryptoPP::ByteQueue;
 
 #include <assert.h>

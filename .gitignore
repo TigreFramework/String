@@ -2,5 +2,4 @@
 private.pem
 public.pem
 .DS_Store
-deps/
-dist/
+cryptopp/
