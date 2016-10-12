@@ -41,10 +41,9 @@ std::string Tigre::String::getValue(){
 }
 
 // trim from both ends
-Tigre::String Tigre::String::Trim() {
+void Tigre::String::Trim() {
     this->value.erase(std::find_if(this->value.rbegin(), this->value.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), this->value.end());
     this->value.erase(this->value.begin(), std::find_if(this->value.begin(), this->value.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
-    return Tigre::String(this->value);
 }
 
 
@@ -70,7 +69,7 @@ std::vector<Tigre::String> Tigre::String::explode(String delimitador) {
     return result;
 }
 
-Tigre::String Tigre::String::replace(String valor_a, String valor_b) {
+void Tigre::String::replace(String valor_a, String valor_b) {
     String result = "";
 
     std::vector<Tigre::String> peaces = this->explode(valor_a);
@@ -87,7 +86,6 @@ Tigre::String Tigre::String::replace(String valor_a, String valor_b) {
         }
     }
     this->value = result.value;
-    return Tigre::String(this->value);
 }
 
 void Tigre::String::urlDecode() {
