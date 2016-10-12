@@ -32,9 +32,11 @@ namespace Tigre {
 
             ~String();
 
+
+            Tigre::String Trim();
             int Count();
             std::vector<Tigre::String> explode(String delimitador);
-            void replace(String valor_a, String valor_b);
+            Tigre::String replace(String valor_a, String valor_b);
             void urlDecode();
             void urlEncode();
             String aleatorio(int tamanho);
