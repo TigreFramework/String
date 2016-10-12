@@ -176,6 +176,11 @@ Tigre::String& Tigre::String::operator+=(const Tigre::String& rhs) {
     return *this;
 }
 
+Tigre::String& Tigre::String::operator=(const Tigre::String& rhs) {
+    this->value = rhs.value;
+    return *this;
+}
+
 Tigre::String Tigre::operator+(Tigre::String lhs, const Tigre::String& rhs){
     lhs += rhs;
     return lhs;

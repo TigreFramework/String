@@ -44,6 +44,7 @@ namespace Tigre {
 
             char& operator[](std::size_t idx);
             String& operator+=(const String& rhs);
+            String& operator=(const String& rhs);
 
 
             friend std::ostream & operator << (std::ostream &os, const String & p_oParagraph) {
