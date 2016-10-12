@@ -53,6 +53,7 @@ namespace Tigre {
 
             friend std::istream & operator>>(std::istream& os, const String& p);
             friend String operator+(String lhs, const String& rhs);
+            friend String operator+(std::string lhs, const std::string& rhs);
             friend bool operator==(const String& lhs, const String& rhs);
             friend bool operator!=(const String& lhs, const String& rhs);
 

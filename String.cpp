@@ -186,6 +186,11 @@ Tigre::String Tigre::operator+(Tigre::String lhs, const Tigre::String& rhs){
     return lhs;
 }
 
+Tigre::String Tigre::operator+(std::string lhs, const std::string& rhs){
+    lhs += rhs;
+    return lhs;
+}
+
 bool Tigre::operator==(const String& lhs, const String& rhs){
     return (lhs.value == rhs.value);
 }
