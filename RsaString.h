@@ -6,7 +6,6 @@
 #define RSA_RSASTRING_H
 
 #include "cryptopp/rsa.h"
-using CryptoPP::RSA;
 using CryptoPP::InvertibleRSAFunction;
 using CryptoPP::RSAES_OAEP_SHA_Encryptor;
 using CryptoPP::RSAES_OAEP_SHA_Decryptor;
@@ -113,20 +112,20 @@ namespace Tigre {
             void Encryption();
             void Decryption();
 
-            void SavePrivateKey(const string& filename, const RSA::PrivateKey& key);
-            void SavePublicKey(const string& filename, const RSA::PublicKey& key);
+            void SavePrivateKey(const string& filename, const CryptoPP::RSA::PrivateKey& key);
+            void SavePublicKey(const string& filename, const CryptoPP::RSA::PublicKey& key);
             void Save(const string& filename, const CryptoPP::BufferedTransformation& bt);
 
-            void LoadPrivateKey(const string& filename, RSA::PrivateKey& key);
-            void LoadPublicKey(const string& filename, RSA::PublicKey& key);
+            void LoadPrivateKey(const string& filename, CryptoPP::RSA::PrivateKey& key);
+            void LoadPublicKey(const string& filename, CryptoPP::RSA::PublicKey& key);
             void Load(const string& filename, CryptoPP::BufferedTransformation& bt);
 
 
     protected:
             std::string value;
     private:
-            RSA::PrivateKey privateKey;
-            RSA::PublicKey publicKey;
+            CryptoPP::RSA::PrivateKey privateKey;
+            CryptoPP::RSA::PublicKey publicKey;
             AutoSeededRandomPool rng;
             std::string publicKeyPath;
             std::string privateKeyPath;

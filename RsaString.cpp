@@ -26,10 +26,10 @@ std::string Tigre::RsaString::getValue(){
 }
 
 void Tigre::RsaString::gerarChaves(){
-    RSA::PrivateKey rsaPrivate;
+    CryptoPP::RSA::PrivateKey rsaPrivate;
     rsaPrivate.GenerateRandomWithKeySize(rng, 2048);
 
-    RSA::PublicKey rsaPublic(rsaPrivate);
+    CryptoPP::RSA::PublicKey rsaPublic(rsaPrivate);
 
     SavePrivateKey(privateKeyPath, rsaPrivate);
     SavePublicKey(publicKeyPath, rsaPublic);
@@ -71,7 +71,7 @@ void Tigre::RsaString::Decryption() {
 //-------------------------------------------------------------//
 
 
-void Tigre::RsaString::SavePrivateKey(const string& filename, const RSA::PrivateKey& key)  {
+void Tigre::RsaString::SavePrivateKey(const string& filename, const CryptoPP::RSA::PrivateKey& key)  {
     // http://www.cryptopp.com/docs/ref/class_byte_queue.html
     ByteQueue queue;
     key.DEREncodePrivateKey(queue);
@@ -79,7 +79,7 @@ void Tigre::RsaString::SavePrivateKey(const string& filename, const RSA::Private
     Save(filename, queue);
 }
 
-void Tigre::RsaString::SavePublicKey(const string& filename, const RSA::PublicKey& key)  {
+void Tigre::RsaString::SavePublicKey(const string& filename, const CryptoPP::RSA::PublicKey& key)  {
     // http://www.cryptopp.com/docs/ref/class_byte_queue.html
     ByteQueue queue;
     key.DEREncodePublicKey(queue);
@@ -98,14 +98,14 @@ void Tigre::RsaString::Save(const string& filename, const CryptoPP::BufferedTran
 //-------------------------------------------------------------//
 
 
-void Tigre::RsaString::LoadPrivateKey(const string& filename, RSA::PrivateKey& key)  {
+void Tigre::RsaString::LoadPrivateKey(const string& filename, CryptoPP::RSA::PrivateKey& key)  {
     ByteQueue queue;
 
     Load(filename, queue);
     key.BERDecodePrivateKey(queue, false /*optParams*/, queue.MaxRetrievable());
 }
 
-void Tigre::RsaString::LoadPublicKey(const string& filename, RSA::PublicKey& key)  {
+void Tigre::RsaString::LoadPublicKey(const string& filename, CryptoPP::RSA::PublicKey& key)  {
     ByteQueue queue;
 
     Load(filename, queue);
