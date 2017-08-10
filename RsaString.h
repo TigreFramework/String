@@ -30,7 +30,7 @@ using CryptoPP::AutoSeededRandomPool;
 using CryptoPP::SecByteBlock;
 
 #include "cryptopp/cryptlib.h"
-using CryptoPP::Exception;
+//using CryptoPP::Exception;
 using CryptoPP::DecodingResult;
 
 #include <string>
