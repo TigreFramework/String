@@ -12,14 +12,12 @@
 #include <iostream>
 #include <stdio.h>
 
-#include "RsaString.h"
-
 
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 namespace Tigre {
 
-    class String : public RsaString {
+    class String {
 
         public:
             String();
@@ -58,9 +56,7 @@ namespace Tigre {
             friend bool operator!=(const String& lhs, const String& rhs);
 
         private:
-            #ifndef RSA_RSASTRING_H
             std::string value;
-            #endif
 
 
     };

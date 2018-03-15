@@ -2,6 +2,7 @@
 // Created by Pedro Soares on 4/19/16.
 //
 
+#include <algorithm>
 #include "String.h"
 
 Tigre::String::String() {

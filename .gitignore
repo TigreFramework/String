@@ -3,3 +3,5 @@ private.pem
 public.pem
 .DS_Store
 cryptopp/
+build
+cmake-build-debug
